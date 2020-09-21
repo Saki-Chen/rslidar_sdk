@@ -34,7 +34,7 @@ common:
 
 lidar:
   - driver:
-      lidar_type: RS128            #The lidar type - RS16, RS32, RSBP, RS128, RS80
+      lidar_type: RS16            #The lidar type - RS16, RS32, RSBP, RS128, RS80
       frame_id: /rslidar           #The frame id of message
       device_ip: 192.168.1.200     #The device ip address
       msop_port: 6699              #The msop port of lidar,default is 6699
@@ -44,7 +44,7 @@ lidar:
       min_distance: 0.2            #The minimum distance of point cloud area
       max_distance: 200            #The maximum distance of point cloud area
       use_lidar_clock: false       #True--Use the lidar clock as the message timestamp;False-- Use the system clock as the timestamp  
-      angle_path: /home/robosense/angle.csv   #The path of the angle calibration file. For the latest version lidars, there is no need to use this file.
+      angle_path: /home/saki-chen/rslidar_driver_ws/src/rslidar_sdk/config/angle.csv   #The path of the angle calibration file. For the latest version lidars, there is no need to use this file.
     ros:
       ros_recv_packet_topic: /rslidar_packets    #The topic which used to receive lidar packets from ROS
       ros_send_packet_topic: /rslidar_packets    #The topic which used to send lidar packets through ROS
