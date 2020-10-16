@@ -43,7 +43,7 @@ lidar:
       end_angle: 360               #The end angle of point cloud area
       min_distance: 0.4            #The minimum distance of point cloud area
       max_distance: 200            #The maximum distance of point cloud area
-      use_lidar_clock: true       #True--Use the lidar clock as the message timestamp;False-- Use the system clock as the timestamp  
+      use_lidar_clock: false       #True--Use the lidar clock as the message timestamp;False-- Use the system clock as the timestamp  
       angle_path: /home/neousys/rslidar_driver_ws/src/rslidar_sdk/config/angle_mid.csv   #The path of the angle calibration file. For the latest version lidars, there is no need to use this file.
     ros:
       ros_recv_packet_topic: /rslidar_packets    #The topic which used to receive lidar packets from ROS
@@ -69,7 +69,7 @@ lidar:
       end_angle: 360               #The end angle of point cloud area
       min_distance: 0.4            #The minimum distance of point cloud area
       max_distance: 200            #The maximum distance of point cloud area
-      use_lidar_clock: true       #true--Use the lidar clock as the message timestamp;false-- Use the system clock as the timestamp  
+      use_lidar_clock: false       #true--Use the lidar clock as the message timestamp;false-- Use the system clock as the timestamp  
       angle_path: /home/neousys/rslidar_driver_ws/src/rslidar_sdk/config/angle_left.csv  #The path of the angle calibration file. For the latest version lidars, there is no need to use this file.
     ros:
       ros_recv_packet_topic: /left/rslidar_packets    #The topic which used to receive lidar packets from ROS
@@ -94,7 +94,7 @@ lidar:
       end_angle: 360               #The end angle of point cloud area
       min_distance: 0.4            #The minimum distance of point cloud area
       max_distance: 200            #The maximum distance of point cloud area
-      use_lidar_clock: true       #true--Use the lidar clock as the message timestamp;false-- Use the system clock as the timestamp  
+      use_lidar_clock: false       #true--Use the lidar clock as the message timestamp;false-- Use the system clock as the timestamp  
       angle_path: /home/neousys/rslidar_driver_ws/src/rslidar_sdk/config/angle_right.csv  #The path of the angle calibration file. For the latest version lidars, there is no need to use this file.
     ros:
       ros_recv_packet_topic: /right/rslidar_packets    #The topic which used to receive lidar packets from ROS
