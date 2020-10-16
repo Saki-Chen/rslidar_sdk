@@ -61,7 +61,7 @@ lidar:
 
   - driver:
       lidar_type: RS16            #The lidar type - RS16, RS32, RSBP, RS128, RS80
-      frame_id: /rslidar           #The frame id of message
+      frame_id: /rslidar_left           #The frame id of message
       device_ip: 192.168.1.199     #The device ip address
       msop_port: 1990              #The msop port of lidar,default is 6699
       difop_port: 1991             #The difop port of lidar, default is 7788
@@ -86,7 +86,7 @@ lidar:
       packet_send_ip: 127.0.0.1                   #The ip address which the lidar packets will be send to
   - driver:
       lidar_type: RS16            #The lidar type - RS16, RS32, RSBP, RS128, RS80
-      frame_id: /rslidar           #The frame id of message
+      frame_id: /rslidar_right           #The frame id of message
       device_ip: 192.168.1.201     #The device ip address
       msop_port: 2010              #The msop port of lidar,default is 6699
       difop_port: 2011             #The difop port of lidar, default is 7788
