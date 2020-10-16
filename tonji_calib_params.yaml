@@ -1,0 +1,26 @@
+base_lidar_index: 3
+calibration:
+  - parent_frame_id: lidar_3
+    frame_id: lidar_1
+    x: -1.249000902703301e-16
+    y: 0.65
+    z: -0.2
+    roll: -0.8203047710000001
+    pitch: 0.017453293
+    yaw: 0
+  - parent_frame_id: lidar_3
+    frame_id: lidar_2
+    x: 2.654126918244515e-16
+    y: -0.5250000000000004
+    z: -0.2
+    roll: 0.785398185
+    pitch: 0
+    yaw: 0
+  - parent_frame_id: lidar_3
+    frame_id: lidar_3
+    x: 0
+    y: 0
+    z: 1.599999999999999
+    roll: 0.006981317200000003
+    pitch: -0
+    yaw: 0
