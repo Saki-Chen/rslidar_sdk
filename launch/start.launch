@@ -1,7 +1,10 @@
 <launch>
-  <!-- <remap from="/rslidar_points" to="velodyne_points" /> -->
+  <remap from="/rslidar_points" to="velodyne_points" />
   <node pkg="rslidar_sdk" name="rslidar_sdk_node" type="rslidar_sdk_node" output="screen">
+    <param name="config_file_path" type="string" value="config/config_single.yaml" />
   </node>
+
   <!-- rviz -->
-  <node pkg="rviz" name="rviz" type="rviz" args="-d $(find rslidar_sdk)/rviz/rviz.rviz" />
+  <!-- <node pkg="rviz" name="rviz" type="rviz" args="-d $(find rslidar_sdk)/rviz/rviz.rviz" /> -->
+
 </launch>

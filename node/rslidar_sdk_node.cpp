@@ -44,12 +44,26 @@ int main(int argc, char** argv)
         << RSLIDAR_VERSION_PATCH << "     **********" << RS_REND;
   RS_TITLE << "**********                                    **********" << RS_REND;
   RS_TITLE << "********************************************************" << RS_REND;
-
+  
   std::shared_ptr<AdapterManager> demo_ptr = std::make_shared<AdapterManager>();
   YAML::Node config;
+
+  std::string config_file_path =  "/config/config_single.yaml";
+
+#ifdef ROS_FOUND  ///< if ROS is found, call the ros::init function
+  ros::init(argc, argv, "rslidar_sdk_node", ros::init_options::NoSigintHandler);
+  ros::NodeHandle nh;
+  nh.getParam("rslidar_sdk_node/config_file_path", config_file_path);
+  std::cout << config_file_path << std::endl;
+#endif
+
+#ifdef ROS2_FOUND  ///< if ROS2 is found, call the rclcpp::init function
+  rclcpp::init(argc, argv);
+#endif
+
   try
   {
-    config = YAML::LoadFile((std::string)PROJECT_PATH + "/config/config.yaml");
+    config = YAML::LoadFile((std::string)PROJECT_PATH + "/" + config_file_path);
   }
   catch (...)
   {
@@ -57,13 +71,6 @@ int main(int argc, char** argv)
     return -1;
   }
 
-#ifdef ROS_FOUND  ///< if ROS is found, call the ros::init function
-  ros::init(argc, argv, "rslidar_sdk_node", ros::init_options::NoSigintHandler);
-#endif
-
-#ifdef ROS2_FOUND  ///< if ROS2 is found, call the rclcpp::init function
-  rclcpp::init(argc, argv);
-#endif
 
   demo_ptr->init(config);
   demo_ptr->start();

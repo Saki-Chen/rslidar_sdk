@@ -1,12 +1,13 @@
 <launch>
   <!-- <remap from="/rslidar_points" to="velodyne_points" /> -->
   <node pkg="rslidar_sdk" name="rslidar_sdk_node" type="rslidar_sdk_node" output="screen">
+    <param name="config_file_path" type="string" value="config/config_multi.yaml" />
   </node>
-  <!-- rviz -->
-  <node pkg="rviz" name="rviz" type="rviz" args="-d $(find rslidar_sdk)/rviz/rviz.rviz" />
 
   <!--Calibration-->
-  <node pkg="tf" type="static_transform_publisher" name="base_link_to_rslidar"  args="-1.249000902703301e-16 0.65 -0.2 0 0.017453293 -0.8203047710000001 /rslidar /rslidar_left 1" required="true" />
-  <node pkg="tf" type="static_transform_publisher" name="base_link_to_rslidar"  args="2.654126918244515e-16 -0.5250000000000004 -0.2 0 0 0.006981317200000003 /rslidar /rslidar_right 1" required="true" />
+  <node pkg="tf" type="static_transform_publisher" name="rslidar_link_to_rslidar_left"  args="-1.249000902703301e-16 0.65 -0.2 0 0.017453293 -0.8203047710000001 /rslidar /rslidar_left 1" required="true" />
+  <node pkg="tf" type="static_transform_publisher" name="rslidar_link_to_rslidar_right"  args="2.654126918244515e-16 -0.5250000000000004 -0.2 0 0 0.006981317200000003 /rslidar /rslidar_right 1" required="true" />
 
+  <!-- rviz -->
+  <node pkg="rviz" name="rviz" type="rviz" args="-d $(find rslidar_sdk)/rviz/rviz.rviz" />
 </launch>
